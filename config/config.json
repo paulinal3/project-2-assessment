@@ -1,16 +1,16 @@
 {
   "development": {
-    "database": "unit2_assessment",
+    "database": "unit2_development",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "database": "unit2_assessment",
+    "database": "unit2_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "database": "unit2_assessment",
+    "database": "unit2_production",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }
