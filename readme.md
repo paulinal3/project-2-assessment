@@ -1,6 +1,6 @@
 # Project 2 Assessment Starter Code
 
-This repo contains the starter code for the [assessment of Node, Express, and PostgreSQL](https://github.com/WDI-SEA/wdi_assessments/blob/master/project_assessments/project-2-assessment.md) knowledge that students will complete following unit 2 of the Software Engineering Immersive course.
+This repo contains the starter code for the [assessment of Node, Express, and PostgreSQL](https://github.com/WDI-SEA/wdi_assessments/blob/master/project_assessments/project2_remote_self_assessment.md) knowledge that students will complete following unit 2 of the Software Engineering Immersive course.
 
 ## Set Up
 
