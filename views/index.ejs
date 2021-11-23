@@ -5,22 +5,23 @@
     <div>
         <h1>Wacky Widgets</h1>
     
-        <% widgets.forEach(widget => {%>
-            <% if (widgets.length === 0) {%>
+            <% if (widgets.length === 0) { %>
                 <h3>No Widgets Exist</h3> <hr>
-            <% } else {%>
-                <div>
-                    <h3><%= widget.dataValues.description %></h3>
-                    <h3>Quantity: <%= widget.dataValues.quantity %></h3>
-                    <form method="POST" action="/?_method=DELETE">
-                        <input hidden type="text" name="description" value="<%= widget.dataValues.description %>">
-                        <input hidden type="text" name="quantity" value="<%= widget.dataValues.quantity %>">
-                        <input type="submit"  value="DELETE">
-                    </form>
-                </div>
-            <% }%>
-        <% })%>
+            <% } else { %>
+                <% widgets.forEach(widget => { %>
+                    <div>
+                        <h3><%= widget.dataValues.description %></h3>
+                        <h3>Quantity: <%= widget.dataValues.quantity %></h3>
+                        <form method="POST" action="/?_method=DELETE">
+                            <input hidden type="text" name="description" value="<%= widget.dataValues.description %>">
+                            <input hidden type="text" name="quantity" value="<%= widget.dataValues.quantity %>">
+                            <input type="submit" value="DELETE">
+                        </form>
+                    </div>
+                <% }) %>
+            <% } %>
     </div>
+
     <hr>
     <div>
         <h4>Add Widget</h4>

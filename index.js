@@ -50,6 +50,9 @@ app.delete('/', (req, res) => {
         console.log('this was the deleted widget\n', deletedWidgeted)
         res.redirect('/')
     })
+    .catch(error => {
+        console.error
+    })
 })
 
 // YOUR ROUTES ABOVE THIS COMMENT /////
