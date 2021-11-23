@@ -6,11 +6,16 @@
             <% if (widgets.length === 0) {%>
                 <h3>No Widgets Exist</h3> <hr>
             <% } else {%>
-                <h3><%= widget.dataValues.description %> and <%= widget.dataValues.quantity %></h3> <hr>
+                <div>
+                    <h3><%= widget.dataValues.description %> and <%= widget.dataValues.quantity %></h3>
+                    <form action="">
+                        <input type="submit" value="DELETE">
+                    </form>
+                </div>
             <% }%>
         <% })%>
-
     </div>
+    <hr>
     <div>
         <h4>Add Widget</h4>
         <form method="POST" action="/">
