@@ -10,6 +10,9 @@ app.use(methodOverride('_method'))
 
 // WRITE YOUR ROUTES HERE /////////////
 
+app.get('/', (req, res) => {
+    res.render('index')
+})
 
 // YOUR ROUTES ABOVE THIS COMMENT /////
 
