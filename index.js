@@ -19,9 +19,21 @@ app.get('/', (req, res) => {
     })
 })
 
+// POST/CREATE ROUTE TO SHOW FORM TO ADD A NEW WIDGET
+app.post('/', (req, res) => {
+    console.log('these are the widget details\n', req.body)
+    db.widget.create({
+        description: req.body.description,
+        quantity: req.body.quantity
+    })
+    .then(createdWidget => {
+        console.log('this is the created widget\n', createdWidget)
+        res.redirect('/')
+    })
+})
+
 // GET/INDEX ROUTE TO DISPLAY ALL WIDGETS
 
-// GET/NEW ROUTE TO SHOW FORM TO ADD A NEW WIDGET
 
 // DELETE ROUTE TO DELETE A WIDGET
 
