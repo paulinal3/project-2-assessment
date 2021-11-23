@@ -17,6 +17,9 @@ app.get('/', (req, res) => {
         console.log('these are the found widgets\n', foundWidgets)
         res.render('index', {widgets: foundWidgets})
     })
+    .catch(error => {
+        console.error
+    })
 })
 
 // POST/CREATE ROUTE TO SHOW FORM TO ADD A NEW WIDGET
@@ -29,6 +32,9 @@ app.post('/', (req, res) => {
     .then(createdWidget => {
         console.log('this is the created widget\n', createdWidget)
         res.redirect('/')
+    })
+    .catch(error => {
+        console.error
     })
 })
 
