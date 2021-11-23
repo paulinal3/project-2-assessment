@@ -1,3 +1,6 @@
+<head>
+    <link rel="stylesheet" href="css/style.css">
+</head>
 <body>
     <div>
         <h1>Wacky Widgets</h1>
@@ -7,9 +10,12 @@
                 <h3>No Widgets Exist</h3> <hr>
             <% } else {%>
                 <div>
-                    <h3><%= widget.dataValues.description %> and <%= widget.dataValues.quantity %></h3>
-                    <form action="">
-                        <input type="submit" value="DELETE">
+                    <h3><%= widget.dataValues.description %></h3>
+                    <h3>Quantity: <%= widget.dataValues.quantity %></h3>
+                    <form method="POST" action="/?_method=DELETE">
+                        <input hidden type="text" name="description" value="<%= widget.dataValues.description %>">
+                        <input hidden type="text" name="quantity" value="<%= widget.dataValues.quantity %>">
+                        <input type="submit"  value="DELETE">
                     </form>
                 </div>
             <% }%>
@@ -19,10 +25,8 @@
     <div>
         <h4>Add Widget</h4>
         <form method="POST" action="/">
-            <label for="description">Widget Description:</label>
-            <input id="description" type="text" name="description" placeholder="Widget description...">
-            <label for="quantity">Widget Quantity:</label>
-            <input id="quantity" type="text" name="quantity" placeholder="Widget quantity...">
+            <input type="text" name="description" placeholder="Widget description...">
+            <input type="text" name="quantity" placeholder="Widget quantity...">
             <input type="submit" value="ADD WIDGET">
         </form>
     </div>

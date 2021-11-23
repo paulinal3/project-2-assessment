@@ -10,7 +10,7 @@ app.use(methodOverride('_method'))
 
 // WRITE YOUR ROUTES HERE /////////////
 
-// home route
+// HOME ROUTE/INDEX ROUTE DISPLAYING ALL WIDGETS
 app.get('/', (req, res) => {
     db.widget.findAll()
     .then(foundWidgets => {
@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
     })
 })
 
-// POST/CREATE ROUTE TO SHOW FORM TO ADD A NEW WIDGET
+// POST/CREATE ROUTE TO ADD A NEW WIDGET
 app.post('/', (req, res) => {
     console.log('these are the widget details\n', req.body)
     db.widget.create({
@@ -38,10 +38,19 @@ app.post('/', (req, res) => {
     })
 })
 
-// GET/INDEX ROUTE TO DISPLAY ALL WIDGETS
-
-
 // DELETE ROUTE TO DELETE A WIDGET
+app.delete('/', (req, res) => {
+    db.widget.destroy({
+        where: {
+            description: req.body.description,
+            quantity: req.body.quantity
+        }
+    })
+    .then(deletedWidgeted => {
+        console.log('this was the deleted widget\n', deletedWidgeted)
+        res.redirect('/')
+    })
+})
 
 // YOUR ROUTES ABOVE THIS COMMENT /////
 
